@@ -4,6 +4,7 @@ const ejs = require("ejs")
 const dotenv = require("dotenv")
 dotenv.config()
 const port = process.env.PORT || 3000
+const signInUrl = process.env.BASE_URL
 const mongoose = require("mongoose")
 const URI = process.env.MONGO_URI
 app.set("view engine", "ejs")
@@ -162,7 +163,7 @@ app.post("/signup", (req, res) => {
                                     <li>Connect with other members</li>
                                 </ul>
                                 <center>
-                                    <a href="/signin" class="button">Login to Your Account</a>
+                                    <a href="${signInUrl}/signin" class="button">Login to Your Account</a>
                                 </center>
                                 <p>If you have any questions or need assistance, don't hesitate to reach out to our support team.</p>
                                 <p>Best regards,<br>Your Application Team</p>
