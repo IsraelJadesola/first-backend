@@ -162,7 +162,7 @@ app.post("/signup", (req, res) => {
                                     <li>Connect with other members</li>
                                 </ul>
                                 <center>
-                                    <a href="signin" class="button">Login to Your Account</a>
+                                    <a href="/signin" class="button">Login to Your Account</a>
                                 </center>
                                 <p>If you have any questions or need assistance, don't hesitate to reach out to our support team.</p>
                                 <p>Best regards,<br>Your Application Team</p>
