@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form class="form">
+    <form class="form" method="post" action="/signup">
         <p class="title">Create Account</p>
 
         <p class="message">Signup now and get full access to our app. </p>
@@ -18,13 +18,15 @@
             <label>First Name </label>
         </div>
         <div class="inputForm">
-            <input placeholder="Enter your First Name" class="input" style="padding-left: 10px;" type="text">
+            <input name="firstName" placeholder="Enter your First Name" class="input" style="padding-left: 10px;"
+                type="text">
         </div>
         <div class="flex-column">
             <label>Last Name </label>
         </div>
         <div class="inputForm">
-            <input placeholder="Enter your Last Name" class="input" style="padding-left: 10px;" type="text">
+            <input name="lastName" placeholder="Enter your Last Name" class="input" style="padding-left: 10px;"
+                type="text">
         </div>
 
         <div class="flex-column">
@@ -38,7 +40,7 @@
                     </path>
                 </g>
             </svg>
-            <input placeholder="Enter your Email" class="input" type="text">
+            <input name="email" placeholder="Enter your Email" class="input" type="email">
         </div>
 
         <div class="flex-column">
@@ -53,7 +55,7 @@
                     d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0">
                 </path>
             </svg>
-            <input placeholder="Enter your Password" class="input" type="password">
+            <input name="password" placeholder="Enter your Password" class="input" type="password">
         </div>
 
         <div class="flex-row">
@@ -63,7 +65,8 @@
             </div>
         </div>
         <button class="button-submit">Sign Up</button>
-        <p class="p">Already have an account? <a style="text-decoration: none;" href="/signin"><span class="span">Sign In</span></a>
+        <p class="p">Already have an account? <a style="text-decoration: none;" href="/signin"><span class="span">Sign
+                    In</span></a>
 
         </p>
         <p class="p line">Or With</p>
