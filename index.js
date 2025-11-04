@@ -98,9 +98,8 @@ app.post("/signup", (req, res) => {
             let transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: "israeljadesola20000@gmail.com",
-                    pass: "aiwwkizjnpskceof",
-                }
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS                }
             });
             let mailOptions = {
                 from: "israeljadesola20000@gmail.com",
@@ -183,8 +182,8 @@ app.post("/signup", (req, res) => {
                 } else {
                     console.log('Email sent:', info.response)
                 }
+                res.redirect("/signin")
             })
-            res.redirect("/signin")
         })
 })
 
