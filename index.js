@@ -58,6 +58,10 @@ let firstSchema = mongoose.Schema({
 
 let User = mongoose.model("User", firstSchema)
 
+app.get("/signup", (req, res) => {
+    res.render("signup")
+})
+
 app.post("/signup", (req, res) => {
     const { firstName, lastName, email, password } = req.body;
     console.log(req.body)
@@ -163,7 +167,7 @@ app.post("/signup", (req, res) => {
                                     <li>Connect with other members</li>
                                 </ul>
                                 <center>
-                                    <a href="${signInUrl}" class="button">Login to Your Account</a>
+                                    <a href="" class="button">Login to Your Account</a>
                                 </center>
                                 <p>If you have any questions or need assistance, don't hesitate to reach out to our support team.</p>
                                 <p>Best regards,<br>Your Application Team</p>
@@ -189,6 +193,9 @@ app.post("/signup", (req, res) => {
         })
 })
 
+app.get("/signin", (req, res) => {
+    res.render("signin")
+})
 app.post("/signin", (req, res) => {
     const { email, password } = req.body;
 
@@ -223,13 +230,7 @@ app.get("/emini", (req, res) => {
     res.sendFile(__dirname + "/index.html")
 })
 
-app.get("/signup", (req, res) => {
-    res.render("signup")
-})
 
-app.get("/signin", (req, res) => {
-    res.render("signin")
-})
 
 app.get("/dashboard", (req, res) => {
     res.render("dashboard")
