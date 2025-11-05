@@ -99,10 +99,11 @@ app.post("/signup", (req, res) => {
                 service: 'gmail',
                 auth: {
                     user: process.env.EMAIL_USER,
-                    pass: process.env.EMAIL_PASS                }
+                    pass: process.env.EMAIL_PASS,     
+                }
             });
             let mailOptions = {
-                from: "israeljadesola20000@gmail.com",
+                from: process.env.EMAIL_USER,
                 to: [req.body.email],
                 subject: "Welcome to our Application",
 
@@ -162,7 +163,7 @@ app.post("/signup", (req, res) => {
                                     <li>Connect with other members</li>
                                 </ul>
                                 <center>
-                                    <a href="${signInUrl}/signin" class="button">Login to Your Account</a>
+                                    <a href="${signInUrl}" class="button">Login to Your Account</a>
                                 </center>
                                 <p>If you have any questions or need assistance, don't hesitate to reach out to our support team.</p>
                                 <p>Best regards,<br>Your Application Team</p>
@@ -181,6 +182,7 @@ app.post("/signup", (req, res) => {
                     console.log(error)
                 } else {
                     console.log('Email sent:', info.response)
+                    console.log(info)
                 }
                 res.redirect("/signin")
             })
