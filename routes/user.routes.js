@@ -162,7 +162,7 @@ router.post("/signin", (req, res) => {
                         return Promise.reject("wrong password")
                     }
 
-                    res.render("/user/dashboard", { user });
+                    res.render("dashboard", { user });
                     console.log(`${user.firstName} logged in successfully`)
 
                 })
