@@ -17,6 +17,7 @@ app.use(express.json());
 
 app.use("/user", userRoutes)
 
+
 mongoose.connect(URI)
     .then(() => {
         console.log('connected to mongodb');
