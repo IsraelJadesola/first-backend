@@ -132,8 +132,8 @@ const postSignup = (req, res) => {
                     console.log('Email sent:', info.response)
                     console.log(info)
                 }
-                res.redirect("/user/signin")
             })
+            res.status(201).json({success: true, message: "User signed up successfully"})
         })
 }
 
@@ -159,12 +159,17 @@ const postSignin = (req, res) => {
                         return Promise.reject("wrong password")
                     }
 
-                    res.redirect("/user/dashboard", { user });
-                    console.log(`${user.firstName} logged in successfully`)
+                    res.status(201).json({success: true, message: "signin successful"})
+
+                    console.log(`logged in successfully`)
 
                 })
         })
 
+}
+
+const getDashboard = (req, res) => {
+    res.render("dashboard")
 }
 
 
@@ -173,5 +178,6 @@ module.exports = {
     getSignup,
     postSignup,
     getSignin,
-    postSignin
+    postSignin,
+    getDashboard
 }

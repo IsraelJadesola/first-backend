@@ -9,6 +9,13 @@ const URI = process.env.MONGO_URI
 app.set("view engine", "ejs")
 const userRoutes = require("./routes/user.routes")
 
+const cors = require("cors")
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: "GET, POST, PUT, DELETE, PATCH",
+    credentials: true
+}))
+
 // const signInUrl = process.env.BASE_URL
 
 app.use(express.static("public"));

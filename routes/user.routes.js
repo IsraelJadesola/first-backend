@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 
-const {getSignup, getSignin, postSignup, postSignin} = require("../controllers/user.controllers")
+const {getSignup, getSignin, postSignup, postSignin, getDashboard} = require("../controllers/user.controllers")
 
 
 router.get("/signup", getSignup)
@@ -23,9 +23,7 @@ router.get("/emini", (req, res) => {
 
 
 
-router.get("/dashboard", (req, res) => {
-    res.render("dashboard")
-})
+router.get("/dashboard", getDashboard)
 
 
 module.exports = router
