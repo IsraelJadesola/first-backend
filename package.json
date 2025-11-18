@@ -18,6 +18,16 @@
     "nodemailer": "^7.0.10"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
-  }
+    "": "^3.1.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsraelJadesola/first-backend.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IsraelJadesola/first-backend/issues"
+  },
+  "homepage": "https://github.com/IsraelJadesola/first-backend#readme"
 }

@@ -10,8 +10,10 @@ app.set("view engine", "ejs")
 const userRoutes = require("./routes/user.routes")
 
 const cors = require("cors")
+
+
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://level3-react-frontend.vercel.app/",
     methods: "GET, POST, PUT, DELETE, PATCH",
     credentials: true
 }))
