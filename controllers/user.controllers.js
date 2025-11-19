@@ -3,6 +3,9 @@ const saltRounds = 10
 const nodemailer = require("nodemailer")
 const User = require("../models/user.models")
 
+const jsonWebToken = require("jsonwebtoken")
+
+
 const getSignup = (req, res) => {
     res.render("signup")
 }
