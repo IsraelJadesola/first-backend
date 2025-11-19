@@ -2,8 +2,8 @@ const bcrypt = require("bcryptjs")
 const saltRounds = 10
 const nodemailer = require("nodemailer")
 const User = require("../models/user.models")
+const jwt = require("jsonwebtoken")
 
-const jsonWebToken = require("jsonwebtoken")
 
 
 const getSignup = (req, res) => {
@@ -165,6 +165,8 @@ const postSignin = (req, res) => {
                     res.status(201).json({success: true, message: "signin successful"})
 
                     console.log(`logged in successfully`)
+                    const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
+                    console.log(token);
 
                 })
         })
