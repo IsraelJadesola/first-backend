@@ -13,7 +13,7 @@ const cors = require("cors")
 
 
 app.use(cors({
-    origin: "https://level3-react-frontend.vercel.app",
+    origin: "https://level3-react-frontend.vercel.app/",
     methods: "GET, POST, PUT, DELETE, PATCH",
     credentials: true
 }))
