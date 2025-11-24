@@ -162,14 +162,29 @@ const postSignin = (req, res) => {
                         return Promise.reject("wrong password")
                     }
 
-                    res.status(201).json({success: true, message: "signin successful"})
-
+                    
                     console.log(`logged in successfully`)
+                    
+                    
                     const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
                     console.log(token);
-
-                })
-        })
+                    
+                    res.status(201).json({
+                        success: true, 
+                        message: "User signed successfully",
+                        token,
+                        user:{
+                            email: user.email,
+                            firstName: user.firstName,
+                            lastName: user.lastName
+                        }
+                    })
+                    
+                });
+        }).catch((err)  => {
+            console.error("Error finding user:", err);
+            res.status(500).send("Internal  server error")
+        });
 
 }
 
