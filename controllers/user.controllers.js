@@ -13,7 +13,7 @@ const getSignup = (req, res) => {
 const postSignup = (req, res) => {
     const { firstName, lastName, email, password } = req.body;
     console.log(req.body)
-
+    
     const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     if (!strongPasswordRegex.test(password)) {
@@ -53,7 +53,7 @@ const postSignup = (req, res) => {
                     pass: process.env.EMAIL_PASS,
                 }
             });
-            let mailOptions = {
+            let mailOptions = {     
                 from: process.env.EMAIL_USER,
                 to: [req.body.email],
                 subject: "Welcome to our routerlication",
@@ -114,7 +114,7 @@ const postSignup = (req, res) => {
                                     <li>Connect with other members</li>
                                 </ul>
                                 <center>
-                                    <a href="" class="button">Login to Your Account</a>
+                                    <a href="https://first-backend-7x60.onrender.com/user/signin" class="button">Login to Your Account</a>
                                 </center>
                                 <p>If you have any questions or need assistance, don't hesitate to reach out to our support team.</p>
                                 <p>Best regards,<br>Your routerlication Team</p>
